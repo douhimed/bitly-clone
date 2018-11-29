@@ -1,0 +1,17 @@
+form{
+    margin: 50px auto;
+    width: 500px;
+    margin-bottom: -20px;
+}
+
+.formTitle{
+    display: block;
+    border:1px solid var(--dark-purple);
+    background: var(--dark-purple);
+    color: var(--white);
+    height:50px;
+    font-size:13pt;
+    text-align:center;
+    padding-top:10px;
+    margin:-1px 0px 20px 0;
+}

@@ -1,6 +1,6 @@
 # Bitly Application Clone
 
-## Objectifs
+## Objectifs ##
 
 - The application is done in "MQL workshops 2018" with the following **use cases**: 
 
