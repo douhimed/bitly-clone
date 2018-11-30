@@ -1,36 +1,55 @@
-import React, {Component} from 'react'
-import Form from '../components/forms'
 
-class LoginView extends Component{
+import React from 'react'
+import { ContentCard } from '../components/cards'
+import { Input } from '../components/forms'
+import { Button } from '../components/buttons'
 
-
-    state = {
-
-        formInfos:{
-          title: "Login",
-          method: "GET",
-          action: "/login",
-          button: "Login",
-          inputs: [
-            {label: "Username", name:"username"},
-            {label: "Password", type:"password", name:"pass"},
-          ]
-        },
-      }
-
-    render(){
-        return (
-            <div className="formDiv">
-                <Form   title={this.state.formInfos.title} 
-                        method={this.state.formInfos.method} 
-                        action={this.state.formInfos.action}
-                        button={this.state.formInfos.button} 
-                        inputs={this.state.formInfos.inputs}
-                  />
-            </div>
-        );
-    }
-
+const styles = {
+  submit: {
+    display: 'flex',
+    width: '100%',
+    alignItems: 'flex-end',
+    paddingTop: '1rem'
+  },
+  form: {
+    maxWidth: '30rem',
+    margin: '0 auto'
+  }
 }
 
-export default LoginView
+export default class LoginView extends React.Component {
+  state = {
+    email: '',
+    password: ''
+  }
+  handleEmailChange = (value) => {
+    this.setState({email: value})
+  }
+
+  handlePasswordChange = (value) => {
+    this.setState({password: value})
+  }
+
+  login = (event) => {
+    event.preventDefault()
+    // do the submit logic here !
+    console.log('submit ', this.state)
+  }
+
+  render() {
+    return (
+        <div className="form__container" style={styles.form}>
+          <h1>Login Information</h1>
+          <ContentCard>
+            <form onSubmit={this.login}>
+              <Input holderText="Enter your Email : " onChange={this.handleEmailChange}/>
+              <Input holderText="Enter your Password : " onChange={this.handlePasswordChange} password/>
+              <div style={styles.submit}>
+                <Button type="submit" label="Submit"/>
+              </div>
+            </form>
+          </ContentCard>
+        </div>
+    );
+  }
+}

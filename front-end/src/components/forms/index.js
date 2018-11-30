@@ -1,7 +1,6 @@
-import Form from './Form'
 
-export default Form
+import Input from './Input'
 
 export {
-    Form
+  Input
 }

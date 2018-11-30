@@ -1,11 +1,14 @@
 import HomeView from './HomeView'
 import LoginView from './LoginView'
-import RegisterView from './RegisterView'
+
+import SignupView from './SignupView'
+
 
 export {
   HomeView,
   LoginView,
-  RegisterView
+
+  SignupView
 }
 
 export default HomeView
